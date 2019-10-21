@@ -10,16 +10,16 @@ script:
   - docker run -e CI=true rnaydenov/docker-react npm run test -- --coverage
 
 deploy: 
-  - provider: elasticbeanstalk
-  - region: "us-east-2" 
-  - app: "react-docker"
-  - env: "ReactDocker-env"
-  - bucket_name: "arn:aws:s3:::elasticbeanstalk-us-east-2-844447955995"
-  - bucket_path: "react-docker"
-  - on: 
+  provider: elasticbeanstalk
+  region: "us-east-2" 
+  app: "react-docker"
+  env: "ReactDocker-env"
+  bucket_name: "arn:aws:s3:::elasticbeanstalk-us-east-2-844447955995"
+  bucket_path: "react-docker"
+  on: 
       branch: master
 
   # Keys will be taken from local environment config (specified in TravisCI platform)
-  - access_key_id: $AWS_ACCESS_KEY
-  - secret_key_id: 
-      secure: "$AWS_SECRET_KEY"
+  access_key_id: $AWS_ACCESS_KEY
+  secret_key_id: 
+    secure: "$AWS_SECRET_KEY"
