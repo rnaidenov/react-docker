@@ -22,4 +22,4 @@ deploy:
   # Keys will be taken from local environment config (specified in TravisCI platform)
   access_key_id: $AWS_ACCESS_KEY
   secret_key_id: 
-    secure: "$AWS_SECRET_KEY"
+    secure: $AWS_SECRET_KEY
